@@ -2,10 +2,9 @@ import XCTest
 @testable import JCLogKit
 
 final class JCLogKitTests: XCTestCase {
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(JCLogKit().text, "Hello, World!")
+    func testDebugMode() {
+        #if !DEBUG
+        XCTFail()
+        #endif
     }
 }
