@@ -1,4 +1,5 @@
 import os.log
+import Foundation
 
 public struct JCLogKit {
 
@@ -14,7 +15,15 @@ public struct JCLogKit {
         case .error: emoji = "‼️"
         default: emoji = "ℹ️"
         }
-        let message = "[Jerrycan][\(emoji)] " + info
+
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minutes = calendar.component(.minute, from: date)
+        let seconds = calendar.component(.second, from: date)
+        let nanoSeconds = calendar.component(.nanosecond, from: date)
+        let timestamp = "\(hour):\(minutes):\(seconds):\(nanoSeconds)"
+        let message = "[Jerrycan][\(emoji)][\(timestamp)] " + info
         print(message)
         return
         #else
