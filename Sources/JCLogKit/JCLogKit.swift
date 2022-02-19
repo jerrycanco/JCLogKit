@@ -22,7 +22,8 @@ public struct JCLogKit {
         let minutes = calendar.component(.minute, from: date)
         let seconds = calendar.component(.second, from: date)
         let nanoSeconds = calendar.component(.nanosecond, from: date)
-        let timestamp = "\(hour):\(minutes):\(seconds):\(nanoSeconds)"
+        let trimmedNanoSeconds = "\(nanoSeconds)".prefix(3)
+        let timestamp = "\(hour):\(minutes):\(seconds):\(trimmedNanoSeconds)"
         let message = "[Jerrycan][\(emoji)][\(timestamp)] " + info
         print(message)
         return
