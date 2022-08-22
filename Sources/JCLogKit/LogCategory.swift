@@ -10,5 +10,6 @@ public enum LogCategory: String {
     case ui
     case businessLogic
     case launch
+    case urlRequest
 }
 

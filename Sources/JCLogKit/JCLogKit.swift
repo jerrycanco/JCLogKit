@@ -11,7 +11,7 @@ public struct JCLogKit {
         #if DEBUG
         var emoji = ""
         switch type {
-        case .info: emoji = "ℹ️"
+        case .info: emoji = category == .urlRequest ? "🌎" : "ℹ️"
         case .error: emoji = "‼️"
         default: emoji = "ℹ️"
         }
