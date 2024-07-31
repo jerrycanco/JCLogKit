@@ -1,5 +1,5 @@
 import Foundation
-import os.log
+import OSLog
 
 public enum LogCategory: String {
     case account
