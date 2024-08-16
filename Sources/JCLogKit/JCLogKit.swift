@@ -1,4 +1,4 @@
-import os.log
+import os
 import Foundation
 
 public struct JCLogKit {
